@@ -1,7 +1,14 @@
-import React from "react";
+import React, { Component } from "react";
+import MemoForm from "./components/MemoForm";
 
-function App() {
-  return <div>Hello World!</div>;
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <MemoForm />
+      </div>
+    );
+  }
 }
 
 export default App;
