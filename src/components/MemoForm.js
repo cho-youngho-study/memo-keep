@@ -6,15 +6,18 @@ class menoForm extends Component {
     memoTitle: "",
     memoText: ""
   };
-  handleOnSubmit = e => {
-    e.preventDefault();
-    this.setState({
-      memoText: [this.state.value]
-    });
-  };
+
   handleOnChange = e => {
     this.setState({
       [e.target.name]: e.target.value
+    });
+  };
+  handleOnSubmit = e => {
+    e.preventDefault();
+    this.props.onCreate(this.state);
+    this.setState({
+      memoTitle: "",
+      memoText: ""
     });
   };
   render() {
