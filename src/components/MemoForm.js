@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import Nomemo from "../images/no-memo.png";
+import Nomemo from "../images/no-memoList.png";
 
 class menoForm extends Component {
   state = {

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MemoForm from "./components/MemoForm";
+import MemoInfoList from "./components/MemoInfoList";
 
 class App extends Component {
   id = 0;
@@ -9,7 +10,8 @@ class App extends Component {
   handleOnCreate = data => {
     this.setState({
       memo: this.state.memo.concat({
-        ...data,
+        memoTitle: data.memoTitle,
+        memoText: data.memoText,
         id: this.id++
       })
     });
@@ -18,7 +20,7 @@ class App extends Component {
     return (
       <div>
         <MemoForm onCreate={this.handleOnCreate} />
-        {JSON.stringify(this.state.memo)}
+        <MemoInfoList data={this.state.memo} />
       </div>
     );
   }
