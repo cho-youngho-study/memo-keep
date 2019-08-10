@@ -16,11 +16,17 @@ class App extends Component {
       })
     });
   };
+  handleRemove = id => {
+    const { memo } = this.state.memo;
+    this.setState({
+      memo: memo.filter(info => info.id !== id)
+    });
+  };
   render() {
     return (
       <div>
         <MemoForm onCreate={this.handleOnCreate} />
-        <MemoInfoList data={this.state.memo} />
+        <MemoInfoList data={this.state.memo} onRemove={this.handleRemove} />
       </div>
     );
   }

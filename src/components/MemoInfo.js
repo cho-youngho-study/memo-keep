@@ -1,13 +1,13 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 
 class MemoInfo extends Component {
   render() {
     const { memoTitle, memoText } = this.props.info;
     return (
-      <div>
+      <Fragment>
         <div>{memoTitle}</div>
         <div>{memoText}</div>
-      </div>
+      </Fragment>
     );
   }
 }
